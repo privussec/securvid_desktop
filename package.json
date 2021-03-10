@@ -1,9 +1,9 @@
 {
-  "name": "jitsi-meet-electron",
+  "name": "securvid-electron",
   "version": "2.7.0",
-  "description": "Electron application for Jitsi Meet",
+  "description": "Electron application for SecurVid",
   "main": "./build/main.js",
-  "productName": "Jitsi Meet",
+  "productName": "SecurVid Desktop",
   "scripts": {
     "start": "webpack --config ./webpack.main.js --mode development && concurrently \"npm:watch\" \"electron ./build/main.js\"",
     "clean": "rm -rf node_modules build dist",
@@ -17,9 +17,10 @@
     "node": ">=12.0.0"
   },
   "build": {
-    "appId": "org.jitsi.jitsi-meet",
-    "productName": "Jitsi Meet",
+    "appId": "io.privus.securvid",
+    "productName": "SecurVid Desktop",
     "generateUpdatesFilesForAllChannels": true,
+    "afterSign": "electron-builder-notarize",
     "files": [
       "**/*",
       "resources",
@@ -27,7 +28,7 @@
       "!main.js"
     ],
     "mac": {
-      "artifactName": "jitsi-meet-${arch}.${ext}",
+      "artifactName": "securvid-${arch}.${ext}",
       "target": [
         {
           "arch": [
@@ -43,24 +44,31 @@
       "entitlements": "entitlements.mac.plist",
       "entitlementsInherit": "entitlements.mac.plist",
       "extendInfo": {
-        "NSCameraUsageDescription": "Jitsi Meet requires access to your camera in order to make video-calls.",
-        "NSMicrophoneUsageDescription": "Jitsi Meet requires access to your microphone in order to make calls (audio/video)."
+        "NSCameraUsageDescription": "SecurVid Desktop requires access to your camera for video-calls.",
+        "NSMicrophoneUsageDescription": "SecurVid Desktop requires access to your microphone for calls."
       }
     },
     "linux": {
-      "artifactName": "jitsi-meet-${arch}.${ext}",
+      "artifactName": "securvid-${arch}.${ext}",
       "category": "VideoConference;AudioVideo;Audio;Video;Network",
-      "description": "Jitsi Meet Desktop App",
-      "executableName": "jitsi-meet",
+      "description": "SecurVid Desktop App",
+      "executableName": "securvid",
+      "executableArgs": [
+        "--no-sandbox"
+      ],
       "target": [
         {
           "arch": "x64",
           "target": "AppImage"
+        },
+        {
+          "arch": "x64",
+          "target": "deb"
         }
       ]
     },
     "win": {
-      "artifactName": "jitsi-meet.${ext}",
+      "artifactName": "securvid.${ext}",
       "target": [
         {
           "arch": [
@@ -79,7 +87,7 @@
         "name": "jitsi-protocol",
         "role": "Viewer",
         "schemes": [
-          "jitsi-meet"
+          "securvid"
         ]
       }
     ]
@@ -89,16 +97,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/jitsi/jitsi-meet-electron"
+    "url": "git://github.com/privussec/securvid_desktop/"
   },
   "keywords": [
     "jingle",
     "webrtc",
     "xmpp",
     "electron",
-    "jitsi-meet"
+    "securvid"
   ],
-  "author": "Jitsi Team <support@jitsi.org>",
+  "author": "Privus <support@privus.global>",
   "readmeFilename": "README.md",
   "license": "Apache-2.0",
   "dependencies": {
@@ -115,17 +123,19 @@
     "@atlaskit/theme": "7.0.1",
     "@atlaskit/toggle": "5.0.14",
     "@jitsi/js-utils": "1.0.5",
+    "cli-truncate": "2.1.0",
     "electron-context-menu": "2.0.1",
     "electron-debug": "3.0.1",
     "electron-is-dev": "1.2.0",
     "electron-log": "4.1.1",
     "electron-reload": "1.5.0",
     "electron-store": "5.1.1",
-    "electron-updater": "4.2.5",
+    "electron-updater": "4.3.8",
     "electron-window-state": "5.0.3",
     "history": "4.10.1",
     "i18next": "19.4.5",
-    "jitsi-meet-electron-utils": "github:jitsi/jitsi-meet-electron-utils#v2.0.16",
+    "jitsi-meet-electron-utils": "github:csett86/jitsi-meet-electron-utils#v2.0.24",
+    "js-utils": "github:jitsi/js-utils#cf11996bd866fdb47326c59a5d3bc24be17282d4",
     "moment": "2.23.0",
     "mousetrap": "1.6.2",
     "react": "16.8.0",
@@ -155,6 +165,7 @@
     "css-loader": "3.5.0",
     "electron": "12.0.0",
     "electron-builder": "22.10.5",
+    "electron-builder-notarize": "1.2.0",
     "electron-react-devtools": "0.5.3",
     "eslint": "6.5.1",
     "eslint-config-jitsi": "github:jitsi/eslint-config-jitsi#1.0.2",

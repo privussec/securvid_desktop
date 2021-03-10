@@ -1,5 +1,5 @@
 {
-	"enterConferenceNameOrUrl": "Ingrese un nombre para su conferencia o un URL de Jitsi",
+	"enterConferenceNameOrUrl": "Ingrese un nombre para su conferencia o un URL de SecurVid",
 	"go": "IR",
 	"help": "Ayuda",
 	"termsLink": "Condiciones de Uso",
@@ -19,7 +19,7 @@
 		"nameSetting": "Este será su nombre mostrado, otros lo verán con este nombre.",
 		"emailSetting": "El correo electrónico que ingrese será parte de su perfil.",
 		"startMutedToggles": "Puede seleccionar aquí si desea iniciar con audio o video desactivado. Esto será aplicado a todas las conferencias.",
-		"serverSetting": "Este será el servidor donde sus conferencias tomarán lugar. Puede usar el suyo, ¡pero no necesita!",
+		"serverSetting": "Este será el servidor donde sus conferencias tomarán lugar.",
 		"serverTimeout": "Tiempo de desconexión, si nadie se une a la reunión antes del tiempo de desconexión  termina, esta se cancela.",
 		"alwaysOnTop": "Puede seleccionar si desea activar la ventana \"siempre-encima\", la que se muestra cuando la ventana principal pierde enfoque. Esto será aplicado a todas las conferencias."
 	},

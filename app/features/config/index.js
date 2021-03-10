@@ -3,28 +3,28 @@ export default {
     /**
      * The URL with extra information about the app / service.
      */
-    aboutURL: 'https://jitsi.org/what-is-jitsi/',
+    aboutURL: 'https://www.privus.global/privus-securvid',
 
     /**
      * The URL to the source code repository.
      */
-    sourceURL: 'https://github.com/jitsi/jitsi-meet-electron',
+    sourceURL: 'https://github.com/privussec/securvid_desktop/',
 
     /**
      * Application name.
      */
-    appName: 'Jitsi Meet',
+    appName: 'SecurVid Desktop',
 
     /**
     * The prefix for application protocol.
     * You will also need to replace this in package.json.
     */
-    appProtocolPrefix: 'jitsi-meet',
+    appProtocolPrefix: 'securvid',
 
     /**
      * The default server URL of Jitsi Meet Deployment that will be used.
      */
-    defaultServerURL: 'https://meet.jit.si',
+    defaultServerURL: 'https://sv.privus.io',
 
     /**
      * The default server Timeout in seconds.
@@ -34,15 +34,15 @@ export default {
     /**
      * URL to send feedback.
      */
-    feedbackURL: 'https://github.com/jitsi/jitsi-meet-electron/issues',
+    feedbackURL: 'https://github.com/privussec/securvid_desktop/issues',
 
     /**
      * The URL of Privacy Policy Page.
      */
-    privacyPolicyURL: 'https://jitsi.org/meet/privacy',
+    privacyPolicyURL: 'https://www.privus.global/privacy-policy',
 
     /**
      * The URL of Terms and Conditions Page.
      */
-    termsAndConditionsURL: 'https://jitsi.org/meet/terms'
+    termsAndConditionsURL: 'https://www.privus.global/terms-conditions'
 };

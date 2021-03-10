@@ -1,0 +1,38 @@
+{
+	"enterConferenceNameOrUrl": "Escreva um nome para a sua reunião no SecurVid, ou então escreva o link completo",
+	"go": "Entrar",
+	"help": "Ajuda",
+	"termsLink": "Condicões de Utilização",
+	"privacyLink": "Privacidade",
+	"sendFeedbackLink": "Enviar comentários",
+	"aboutLink": "Sobre",
+	"sourceLink": "Código fonte",
+	"versionLabel": "Versão: {{version}}",
+	"onboarding": {
+		"startTour": "Iniciar Tour",
+		"skip": "Saltar",
+		"welcome": "Bemvindo ao {{appName}}",
+		"letUsShowYouAround": "Podemos mostrar?",
+		"next": "Seguinte",
+		"conferenceUrl": "Tecle um nome para a sua reunião no SecurVid, ou então o link completo. Pode escolher qualquer nome mas não se esqueça de o partilhar com os outros participantes.",
+		"settingsDrawerButton": "Clique aqui para abrir as opções de configuração",
+		"nameSetting": "Este será o nome mostrado no Securvid",
+		"emailSetting": "O email associado ao seu perfil",
+		"startMutedToggles": "Pode escolher aqui se deseja iniciar o SecurVid com audio ou video desactivado. Isto será aplicado em todas as conferências.",
+		"serverSetting": "Nome do servidor",
+		"serverTimeout": "Tempo antes de desligar. Se ninguém entrar na conferência antes deste tempo terminar, esta será cancelada.",
+		"alwaysOnTop": "Pode escolher se deseja activar o modo janela \"sempre-emcima\", que será mostrada quando a janela principal perder o enfoque. Isto será aplicado em todas as conferências."
+	},
+	"settings": {
+		"back": "Atrás",
+		"name": "Nome",
+		"email": "Email",
+		"advancedSettings": "Configurações avançadas",
+		"alwaysOnTopWindow": "Janela sempre em cima",
+		"startWithAudioMuted": "Iniciar com audio desactivado",
+		"startWithVideoMuted": "Iniciar com video desactivado",
+		"invalidServer": "URL do servidor inválido ou API externa desactivada",
+		"serverUrl": "URL do servidor",
+		"serverTimeout": "Tempo antes de desligar (em segundos)"
+	}
+}
