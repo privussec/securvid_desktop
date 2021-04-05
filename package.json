@@ -1,6 +1,6 @@
 {
   "name": "securvid-electron",
-  "version": "2.7.0",
+  "version": "2.8.4",
   "description": "Electron application for SecurVid",
   "main": "./build/main.js",
   "productName": "SecurVid Desktop",
@@ -20,6 +20,7 @@
     "appId": "io.privus.securvid",
     "productName": "SecurVid Desktop",
     "generateUpdatesFilesForAllChannels": true,
+    "afterPack": "./linux-sandbox-fix.js",
     "afterSign": "electron-builder-notarize",
     "files": [
       "**/*",
@@ -31,11 +32,12 @@
       "artifactName": "securvid-${arch}.${ext}",
       "target": [
         {
-          "arch": [
-            "arm64",
-            "x64"
-          ],
+          "arch": "universal",
           "target": "dmg"
+        },
+        {
+          "arch": "universal",
+          "target": "zip"
         }
       ],
       "category": "public.app-category.video",
@@ -43,19 +45,22 @@
       "hardenedRuntime": true,
       "entitlements": "entitlements.mac.plist",
       "entitlementsInherit": "entitlements.mac.plist",
+      "asarUnpack": "**/*.node",
       "extendInfo": {
         "NSCameraUsageDescription": "SecurVid Desktop requires access to your camera for video-calls.",
         "NSMicrophoneUsageDescription": "SecurVid Desktop requires access to your microphone for calls."
       }
+    },
+    "mas": {
+      "entitlements": "resources/entitlements.mas.plist",
+      "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
+      "hardenedRuntime": false
     },
     "linux": {
       "artifactName": "securvid-${arch}.${ext}",
       "category": "VideoConference;AudioVideo;Audio;Video;Network",
       "description": "SecurVid Desktop App",
       "executableName": "securvid",
-      "executableArgs": [
-        "--no-sandbox"
-      ],
       "target": [
         {
           "arch": "x64",
@@ -123,7 +128,6 @@
     "@atlaskit/theme": "7.0.1",
     "@atlaskit/toggle": "5.0.14",
     "@jitsi/js-utils": "1.0.5",
-    "cli-truncate": "2.1.0",
     "electron-context-menu": "2.0.1",
     "electron-debug": "3.0.1",
     "electron-is-dev": "1.2.0",
@@ -134,8 +138,7 @@
     "electron-window-state": "5.0.3",
     "history": "4.10.1",
     "i18next": "19.4.5",
-    "jitsi-meet-electron-utils": "github:csett86/jitsi-meet-electron-utils#v2.0.24",
-    "js-utils": "github:jitsi/js-utils#cf11996bd866fdb47326c59a5d3bc24be17282d4",
+    "jitsi-meet-electron-utils": "github:jitsi/jitsi-meet-electron-utils#v2.0.16",
     "moment": "2.23.0",
     "mousetrap": "1.6.2",
     "react": "16.8.0",
@@ -163,7 +166,7 @@
     "babel-loader": "8.1.0",
     "concurrently": "5.1.0",
     "css-loader": "3.5.0",
-    "electron": "12.0.0",
+    "electron": "12.0.2",
     "electron-builder": "22.10.5",
     "electron-builder-notarize": "1.2.0",
     "electron-react-devtools": "0.5.3",

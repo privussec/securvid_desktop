@@ -23,6 +23,7 @@ const URL = require('url');
 const config = require('./app/features/config');
 const { openExternalLink } = require('./app/features/utils/openExternalLink');
 const pkgJson = require('./package.json');
+const { existsSync } = require('fs');
 
 const showDevTools = Boolean(process.env.SHOW_DEV_TOOLS) || (process.argv.indexOf('--show-dev-tools') > -1);
 
@@ -161,7 +162,9 @@ function createJitsiMeetWindow() {
     setApplicationMenu();
 
     // Check for Updates.
-    autoUpdater.checkForUpdatesAndNotify();
+    if (!process.mas) {
+        autoUpdater.checkForUpdatesAndNotify();
+    }
 
     // Load the previous window state with fallback to defaults.
     const windowState = windowStateKeeper({
@@ -170,7 +173,18 @@ function createJitsiMeetWindow() {
     });
 
     // Path to root directory.
-    const basePath = isDev ? __dirname : app.getAppPath();
+    let basePath = isDev ? __dirname : app.getAppPath();
+
+    // runtime detection on mac if this is a universal build with app-arm64.asar'
+    // as prepared in https://github.com/electron/universal/blob/master/src/index.ts
+    // if universal build, load the arch-specific real asar as the app does not load otherwise
+    if (process.platform === 'darwin' && existsSync(path.join(app.getAppPath(), '..', 'app-arm64.asar'))) {
+        if (process.arch === 'arm64') {
+            basePath = app.getAppPath().replace('app.asar', 'app-arm64.asar');
+        } else if (process.arch === 'x64') {
+            basePath = app.getAppPath().replace('app.asar', 'app-x64.asar');
+        }
+    }
 
     // URL for index.html which will be our entry point.
     const indexURL = URL.format({
@@ -278,8 +292,9 @@ function handleProtocolCall(fullProtocolCall) {
 
 /**
  * Force Single Instance Application.
+ * Handle this on darwin via LSMultipleInstancesProhibited in Info.plist as below does not work on MAS
  */
-const gotInstanceLock = app.requestSingleInstanceLock();
+const gotInstanceLock = process.platform === 'darwin' ? true : app.requestSingleInstanceLock();
 
 if (!gotInstanceLock) {
     app.quit();
@@ -333,10 +348,7 @@ app.on('second-instance', (event, commandLine) => {
 });
 
 app.on('window-all-closed', () => {
-    // Don't quit the application on macOS.
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+    app.quit();
 });
 
 // remove so we can register each time as we run the app.
