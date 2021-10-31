@@ -4,6 +4,7 @@
 	"help": "Help",
 	"termsLink": "Terms",
 	"privacyLink": "Privacy",
+	"recentListLabel": "or rejoin one of your recent conference rooms",
 	"sendFeedbackLink": "Send Feedback",
 	"aboutLink": "About",
 	"sourceLink": "Source Code",
@@ -34,6 +35,7 @@
 		"invalidServer": "Invalid Server URL",
 		"invalidServerTimeout": "Invalid value for Server Timeout",
 		"serverUrl": "Server URL",
-		"serverTimeout": "Server Timeout (in seconds)"
+		"serverTimeout": "Server Timeout (in seconds)",
+		"disableAGC": "Disable automatic gain control"
 	}
 }

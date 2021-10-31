@@ -4,6 +4,7 @@
 	"help": "Hilfe",
 	"termsLink": "Nutzungsbedingungen",
 	"privacyLink": "Datenschutzbedingungen",
+	"recentListLabel": "oder einen zuletzt genutzen Konferenzraum betreten",
 	"sendFeedbackLink": "Eine Rückmeldung senden",
 	"aboutLink": "F&A",
 	"sourceLink": "Quelltext",
@@ -34,6 +35,7 @@
 		"invalidServer": "Falsche Server-Adresse",
 		"invalidServerTimeout": "Üngültiger Wert für die Server-Wartezeit",
 		"serverUrl": "Server-Adresse",
-        "serverTimeout": "Server-Wartezeit (in Sekunden)"
+		"serverTimeout": "Server-Wartezeit (in Sekunden)",
+		"disableAGC": "Automatische Mikrofonlautstärkeregelung deaktivieren"
 	}
 }
