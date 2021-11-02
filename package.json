@@ -1,6 +1,6 @@
 {
   "name": "securvid-electron",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "description": "Electron application for SecurVid",
   "main": "./build/main.js",
   "productName": "SecurVid Desktop",
@@ -14,7 +14,7 @@
     "watch": "webpack --config ./webpack.renderer.js --mode development --watch --watch-poll"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "build": {
     "appId": "io.privus.securvid",
@@ -129,9 +129,10 @@
   "readmeFilename": "README.md",
   "license": "Apache-2.0",
   "dependencies": {
+    "cli-truncate": "^3.1.0",
     "electron-debug": "^3.2.0",
     "electron-reload": "^1.5.0",
-    "jitsi-meet-electron-utils": "github:csett86/jitsi-meet-electron-utils#v3.0.2"
+    "jitsi-meet-electron-utils": "github:jitsi/jitsi-meet-electron-utils#64477b82008c25b203903568ec11bdac1a284b06"
   },
   "devDependencies": {
     "@atlaskit/button": "^10.1.3",
