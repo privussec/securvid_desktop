@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
-    background: #142b36;
+    background: #1754A9;
     border-radius: 0.5em;
     color: white;
     display: grid;
