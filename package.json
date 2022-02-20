@@ -116,7 +116,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/privussec/securvid_desktop/"
+    "url": "https://github.com/privussec/securvid_desktop"
   },
   "keywords": [
     "jingle",
