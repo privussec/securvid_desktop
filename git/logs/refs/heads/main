@@ -1,6 +1,0 @@
-0000000000000000000000000000000000000000 4ed44a6709ee9ff71b79a313876ee20dd434c3ae darcos <throw@privus.pt> 1615407255 +0000	clone: from https://github.com/privussec/securvid_desktop.git
-4ed44a6709ee9ff71b79a313876ee20dd434c3ae 7553c780f97b62c1ad9b24f13a534b84f7aa3b93 darcos <throw@privus.pt> 1617626336 +0100	pull: Fast-forward
-7553c780f97b62c1ad9b24f13a534b84f7aa3b93 53cc5d78130780f2fdc458f47f8ae23e065fa3e9 darcos <throw@privus.pt> 1618839072 +0100	pull: Fast-forward
-53cc5d78130780f2fdc458f47f8ae23e065fa3e9 7103abd6cc5886417ac22cf32befa22a1aea972d darcos <throw@privus.pt> 1635784643 +0000	pull: Fast-forward
-7103abd6cc5886417ac22cf32befa22a1aea972d 4ab925f1f0298f6a3f87fe0fcffb54539120b13c darcos <throw@privus.pt> 1635879638 +0000	pull: Fast-forward
-4ab925f1f0298f6a3f87fe0fcffb54539120b13c b0a2f74da8437fe64c9bbbf9857591992aa958b2 darcos <throw@privus.pt> 1641502634 +0000	commit: release 2022.1.1
